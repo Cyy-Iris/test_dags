@@ -11,7 +11,7 @@ default_args = {
 
 @dag(dag_id='dag_with_taskflow_api_v02', 
      default_args=default_args, 
-     start_date=datetime(2021, 10, 26), 
+     start_date=datetime(2023, 10, 24), 
      schedule_interval='@daily')
 def hello_world_etl():
 

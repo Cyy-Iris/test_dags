@@ -13,7 +13,7 @@ default_args = {
 with DAG(
     default_args=default_args,
     dag_id="dag_with_cron_expression_v04",
-    start_date=datetime(2021, 11, 1),
+    start_date=datetime(2023, 10, 24),
     schedule_interval='0 3 * * Tue-Fri'
 ) as dag:
     task1 = BashOperator(
