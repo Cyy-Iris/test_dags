@@ -13,7 +13,7 @@ default_args = {
 with DAG(
     dag_id='dag_with_catchup_backfill_v02',
     default_args=default_args,
-    start_date=datetime(2021, 11, 1),
+    start_date=datetime(2023, 10, 22),
     schedule_interval='@daily',
     catchup=False
 ) as dag:
