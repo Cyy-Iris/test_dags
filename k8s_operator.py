@@ -10,7 +10,7 @@ default_args = {
 
 with DAG(
     default_args=default_args,
-    dag_id="dag_with_cron_expression_v04",
+    dag_id="dag_with_k8s",
     start_date=datetime(2023, 10, 24),
     schedule_interval='0 3 * * Tue-Fri'
 ) as dag:
