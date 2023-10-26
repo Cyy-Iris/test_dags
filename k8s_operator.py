@@ -17,9 +17,7 @@ with DAG(
     task1 = KubernetesPodOperator(
     name="hello-dry-run",
     image="debian",
-    cmds=["bash", "-cx"],
-    arguments=["pip", "list"],
-    labels={"foo": "bar"},
+    cmds=["bash", "-cx","pip list"],
     task_id="dry_run_demo",
     do_xcom_push=True,
 )
