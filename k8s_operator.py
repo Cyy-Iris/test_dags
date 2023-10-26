@@ -15,10 +15,10 @@ with DAG(
     schedule_interval='0 3 * * Tue-Fri'
 ) as dag:
     task1 = KubernetesPodOperator(
-    name="hello-dry-run",
+    name="k8s_Operator_test",
     image="debian",
-    cmds=["bash", "-cx","pip list"],
-    task_id="dry_run_demo",
+    cmds=["pip list"],
+    task_id="k8s_Operator_demo",
     do_xcom_push=True,
 )
     task1
