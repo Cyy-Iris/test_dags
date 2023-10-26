@@ -18,7 +18,7 @@ with DAG(
     name="hello-dry-run",
     image="debian",
     cmds=["bash", "-cx"],
-    arguments=["echo", "10"],
+    arguments=["pip", "list"],
     labels={"foo": "bar"},
     task_id="dry_run_demo",
     do_xcom_push=True,
