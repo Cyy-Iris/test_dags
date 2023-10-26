@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
+import numpy as np
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
+import logging
 
 default_args = {
     'owner': 'yiyu',
@@ -11,14 +13,17 @@ default_args = {
 with DAG(
     default_args=default_args,
     dag_id="dag_with_k8s",
-    start_date=datetime(2023, 10, 24),
+    start_date=datetime(2023, 10, 26),
     schedule_interval='0 3 * * Tue-Fri'
 ) as dag:
     task1 = KubernetesPodOperator(
     name="k8s_Operator_test",
+    namespace="airflow",
     image="debian",
-    cmds=["pip list"],
+    cmds=["echo", "Hello, World!"],
+    labels={"app":"k8s_operator_test"},
     task_id="k8s_Operator_demo",
     do_xcom_push=True,
-)
+    )
     task1
+    

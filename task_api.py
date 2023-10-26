@@ -9,7 +9,7 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-@dag(dag_id='dag_with_taskflow_api_v02', 
+@dag(dag_id='dag_with_taskflow_api', 
      default_args=default_args, 
      start_date=datetime(2023, 10, 24), 
      schedule_interval='@daily')
