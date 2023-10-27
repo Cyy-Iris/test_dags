@@ -24,6 +24,7 @@ with DAG(
     labels={"app":"k8s_operator_test"},
     task_id="k8s_Operator_demo",
     do_xcom_push=True,
+    on_finish_action='delete_succeeded_pod',
     )
     task1
     
