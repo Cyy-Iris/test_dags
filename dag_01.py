@@ -10,15 +10,13 @@ default_args = {
 
 with DAG(
     default_args=default_args,
-    dag_id="dag_with_cron_expression_v04",
-    start_date=datetime(2023, 10, 24),
-    schedule_interval='0 3 * * Tue-Fri'
+    dag_id="dag_01"
 ) as dag:
     task1 = KubernetesPodOperator(
     name="hello-dry-run",
     image="debian",
     cmds=["bash", "-cx"],
-    arguments=["echo", "10"],
+    arguments=["echo", "hello world"],
     labels={"foo": "bar"},
     task_id="dry_run_demo",
     do_xcom_push=True,
