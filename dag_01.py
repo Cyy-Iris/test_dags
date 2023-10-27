@@ -6,11 +6,13 @@ default_args = {
     'owner': 'yiyu',
     'retries': 5,
     'retry_delay': timedelta(minutes=5)
+
 }
 
 with DAG(
     default_args=default_args,
-    dag_id="dag_01"
+    dag_id="dag_01",
+    start_date=datetime(2023, 10, 24)
 ) as dag:
     task1 = KubernetesPodOperator(
     name="hello-dry-run",
