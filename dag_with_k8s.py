@@ -18,7 +18,6 @@ with DAG(
 ) as dag:
     task1 = KubernetesPodOperator(
     name="k8s_Operator_test",
-    namespace="airflow",
     image="debian",
     cmds=["echo", "Hello, World!"],
     labels={"app":"k8s_operator_test"},
