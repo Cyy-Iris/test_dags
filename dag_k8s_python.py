@@ -15,7 +15,7 @@ def test_python():
     @task.kubernetes(
         image="python:3.8-slim-buster",
         name="k8s_test",
-        namespace="airflow",
+        #namespace="airflow",
         in_cluster=True,
         config_file=None,
     )
@@ -25,7 +25,7 @@ def test_python():
         print("Hello from k8s pod")
         time.sleep(2)
 
-    @task.kubernetes(image="python:3.8-slim-buster", namespace="airflow", in_cluster=True)
+    @task.kubernetes(image="python:3.8-slim-buster", in_cluster=True)
     def print_pattern():
         n = 5
         for i in range(0, n):
