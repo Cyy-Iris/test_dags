@@ -13,7 +13,7 @@ import pendulum
 )
 def test_python():
     @task.kubernetes(
-        image="python:3.8-slim-buster",
+        image="193995948507.dkr.ecr.eu-central-1.amazonaws.com/auto-modeling-python:3.8-slim-buster3.8-slim-buster",
         name="k8s_test",
         #namespace="airflow",
         namespace="productmodellingtool-prod-v2-axa-rev",
