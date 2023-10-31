@@ -26,7 +26,7 @@ def test_python():
         print("Hello from k8s pod")
         time.sleep(2)
 
-    @task.kubernetes(image="python:3.8-slim-buster", namespace="productmodellingtool-prod-v2-axa-rev",in_cluster=True)
+    @task.kubernetes(image="193995948507.dkr.ecr.eu-central-1.amazonaws.com/auto-modeling-python:3.8-slim-buster3.8-slim-buster", namespace="productmodellingtool-prod-v2-axa-rev",in_cluster=True)
     def print_pattern():
         n = 5
         for i in range(0, n):
